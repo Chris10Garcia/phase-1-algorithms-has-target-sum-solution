@@ -1,5 +1,18 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  
+  const seenNumbers = {}
+
+
+  for (const element of array){
+    const compliment = target - element;
+    
+    if(compliment in seenNumbers) return true;
+
+    seenNumbers[element] = true;
+  }
+
+  return false;
+
 }
 
 /* 
@@ -11,7 +24,39 @@ function hasTargetSum(array, target) {
 */
 
 /*
-  Add written explanation of your solution here
+  instructor iterates through array
+  Target - number = result we want to find
+
+  if the result is in the object results true, return true
+
+  assign the key into the object with the value true
+
+
+  what this does
+  [1, 4, -1, 10, 5], 14
+
+  14 -1 = 13
+
+  is 13 in object? no
+
+  1 :true
+
+  14-4 = 10
+
+  is 10 in object? no
+
+  10 :true
+
+  14 - -1 = 15
+
+  is 15 in object? no
+
+  15 : true
+
+  14 - 4 = 10
+
+  is 10 in object, true -> returns true
+
 */
 
 // You can run `node index.js` to view these console logs
